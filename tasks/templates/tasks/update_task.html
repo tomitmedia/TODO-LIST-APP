@@ -1,0 +1,198 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<style>
+	body{
+
+		background-color: #638CBB;
+		margin: 0;
+		padding: 0;
+			box-sizing: border-box;
+			display: block;
+			}
+
+	input{
+		width: 100%;
+		padding: 12px 20px
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+
+	input::placeholder {
+		color: #d3d3d3;
+	}
+
+	.submit{background-color: #6BA3E8;
+	}
+
+	.grandD{
+		position: relative;
+		width: 100%;
+	}
+
+	.mainn{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 0;
+			position: relative;
+	}
+
+	.center-column{
+		width: 600px;
+		margin: 5% auto;
+		padding: 16px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+		height: auto;
+		position: absolute;
+		top: 20%;
+	}
+
+	
+	.item-row{
+		background-color: #f2f2f2;
+		margin: 10px;
+		border-radius: 3px;
+		color: #2ecc71;
+		font-size: 18px;
+	}
+
+	.btn-danger{
+		background-color: #dc3545;
+		border-color: #dc3545;
+	}
+
+
+	.overlay_del{
+		position: relative;
+		 width: 100%;
+		display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 20;
+	}
+
+	.overlay_update{
+		position: relative;
+		 width: 100%;
+		display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 20;
+	}
+
+	.overlayy{
+		background-color: black;
+		opacity: 50%; height: 100vh; width: 100%;
+		display: none;
+			justify-content: center;
+			align-items: center;
+	}
+
+	.modal_del{
+		position: absolute;
+		justify-content: center;
+			z-index: 99;
+	}
+
+	.modal_update{
+		position: absolute;
+		justify-content: center;
+			z-index: 99;
+	}
+
+	/*ryt {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 25px;
+  position: relative;
+}*/
+
+.ryt-input {
+  position: relative;
+  left: 53;
+  top: -18.9;
+}
+
+
+.ryt {
+  position: relative;
+  left:-8;
+  top: -10;
+}
+
+
+</style>
+
+<!-- #list -->
+<div class="grandD">	
+
+<!-- #update -->
+		<div class="overlay_update">
+			<div style="background-color: #f2f2f2" class="		modal_update center-column">	
+				<div class="item-row " style="text-align: center;">
+					<h3 style="text-align: center; " >Update Task</h3>
+					<p>	</p>
+					<form style="text-align: center; " method="POST" action=""> 
+						{% csrf_token %}
+						<!-- {{form.title}} -->
+		
+						<div class="item-row">
+						<tr><th><label for="id_title"></label></th><td><input type="text" name="title" value="do tutorials" placeholder="Enter task here..." maxlength="40" required id="id_title"></td></tr>
+						<p></p>
+						<div>
+						<label class="ryt" style="color: #2ecc71;"><strong>Complete    </strong><input class="ryt-input" type="checkbox" name="complete" for="id_complete" id="id_complete">
+							
+						</label></div>
+						<!-- </div> -->
+
+					
+						<!-- {{form}} -->
+						<!-- <p><br>	</p> -->
+						<button class="btn btn-info" type="submit" >Update</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="overlayy"></div>
+</div>
+
+<!-- 
+<script type="text/javascript">
+	
+	//alert("this javascript is working");
+
+	const overlay = document.querySelector(".overlay_del");
+	const delButton = document.querySelector("#delButton");
+
+		delButton.addEventListener("click", function(){
+
+			overlay.style.display = "flex";
+			getFunction();
+	// 		//alert("this javascript is working");
+
+
+	// 	})
+
+
+
+		//height to auto get scroll height
+
+		window.onload=  "getFunction()";
+		var body = document.querySelector("body");
+		overlayy = document.querySelector(".overlayy");
+
+		function getFunction(){
+
+			var y = body.scrollHeight;
+			overlayy.style.height = y + "px";
+		}
+
+
+
+
+
+</script> -->
