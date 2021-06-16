@@ -32,7 +32,7 @@ DEBUG = False
 #whitenoise_settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['todo-tom.herokuapp.com', 'todo-tom.co', 'www.todo-tom.co']
 
 
 # Application definition
