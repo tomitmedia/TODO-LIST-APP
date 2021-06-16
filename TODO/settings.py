@@ -11,9 +11,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-# SECRET_KEY = os.environ['SECRET_KEY']
-
-# import dj_database_url
+import dj_database_url
 
 from pathlib import Path
 
@@ -28,7 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ijbp17kld^$r_(15h1=qz1yri@ac=z3hw%gddocdil)u2i&66+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
+
+#whitenoise_settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ALLOWED_HOSTS = []
 
@@ -55,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'TODO.urls'
@@ -90,8 +93,7 @@ WSGI_APPLICATION = 'TODO.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'dj_database_url.config(default='postgres://user:pass@localhost/dbname')
+    'default': dj_database_url.config(default='postgres://tomitmedia:tioluwanimi1@localhost/db.sqlite3')
 }
 
 # Password validation
