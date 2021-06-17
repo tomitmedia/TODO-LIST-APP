@@ -138,15 +138,14 @@
 					<p>	</p>
 					<form style="text-align: center; " method="POST" action=""> 
 						{% csrf_token %}
-						<!-- {{form.title}} -->
+						{{form.title}}
 		
 						<div class="item-row">
-						<tr><th><label for="id_title"></label></th><td><input type="text" name="title" value="do tutorials" placeholder="Enter task here..." maxlength="40" required id="id_title"></td></tr>
-						<p></p>
-						<div>
+						
 						<label class="ryt" style="color: #2ecc71;"><strong>Complete    </strong><input class="ryt-input" type="checkbox" name="complete" for="id_complete" id="id_complete">
 							
 						</label></div>
+						
 						<!-- </div> -->
 
 					
